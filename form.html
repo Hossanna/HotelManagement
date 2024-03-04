@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Comfort Company</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body class="">
+    <header>
+        <nav class="flex">
+            <ul class="ul1 flex">
+                <li class="logo"><img src="./images/logoo.png" alt=""></li>
+                <li>Products </li>
+                <li>Industries</li>
+                <li>Customers</li>
+                <li>Support</li>
+                <li>Company</li>
+
+            </ul>
+            <ul class="ul2 flex">
+                <li class="flex-li"> <a href="#">Contact us</a> <p>1-800-664-9073</p></li>
+                <li></li>
+                <li>Login</li>
+                <a href="./form.html">
+                    <button>Book now</button>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <form class="myForm" id="form" name="form">
+        
+        <div>
+            <h2>Welcome to Highlight Comfort Company</h2>
+        </div>
+        
+        <div>
+            <input type="text" name="fname" id="fname" placeholder="Full Name" autocomplete="name" required  > <br>
+        </div>
+        <div>
+            <input type="text" name="address" id="address" placeholder="Address" autocomplete="street-address" required > <br>
+        </div>
+        <div>
+            <input type="text" name="phone" id="phone" placeholder="Phone Number" autocomplete="tel" required > <br>
+        </div>
+        <div>
+            <input type="email" name="email" id="email" placeholder="Email Address" autocomplete="email" required > <br>
+        </div>
+
+       
+        <div>
+            <label for="Checkin">Check-in date</label>
+            <input type="date" name="checkIn" id="checkIn" autocomplete="date" required>
+        </div>
+        <div>
+            <label for="Checkout">Check-out date</label>
+            <input type="date" name="checkOut" id="checkOut" autocomplete="date" required>
+        </div>
+        <!-- <div>
+            <label for="numOfNights">Number of nights you would like to lodge</label>
+            <input type="number" min="1" name="numOfNights" id="numOfNights" autocomplete="cc-number" required>
+        </div> -->
+
+        <select name="roomType" id="roomType" required >
+            <option value="">Select Room Type</option>
+            <option value="duplex">Deluxe</option>
+            <option value="royale">Royale</option>
+            <option value="supreme">Supreme</option>
+
+        </select>
+        <div>
+            <label for="numOfPersons">How many Persons would you like to lodge per room?</label>
+            <input type="number" min="1" name="numOfPersons" id="numOfPersons" autocomplete="cc-number" required>
+        </div>
+
+        <input type="" id="submit-btn" class="submit-btn" onclick={validateForm()} value="Submit"  > 
+    </form>
+    <!-- action="./loan.html" method="post" -->
+
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
