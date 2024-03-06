@@ -5,11 +5,7 @@ let address = document.getElementById("address")
 let phone = document.getElementById("phone")
 let email = document.getElementById("email")
 let checkIn = document.getElementById("checkIn")
-let checkInValue = document.getElementById("checkIn").value
-
 let checkOut = document.getElementById("checkOut")
-let checkOutValue = document.getElementById("checkOut").value
-
 let roomType = document.getElementById("roomType")
 let numOfPersons = document.getElementById("numOfPersons")
 let submitButton = document.getElementById("submit-btn")
@@ -59,7 +55,6 @@ function validateEmail(){
     }
 }
 function validateCheckIn(){
-    // let checkInValue = checkIn.value
     if (checkIn.value == ""){
         checkIn.style.borderColor = 'red'
         // alert('Please enter your checkIn date')
@@ -67,11 +62,10 @@ function validateCheckIn(){
 
     }
     else{
-        // return checkInValue
+
     }
 }
 function validateCheckOut(){
-    // let checkOutValue = checkOut.value
     if (checkOut.value == ""){
         checkOut.style.borderColor = 'red'
         // alert('Please enter your checkOut date')
@@ -79,20 +73,21 @@ function validateCheckOut(){
 
     }
     else{
-        // return checkOutValue
+
     }
 }
 function calcNumOfDays(){
-    console.log(checkInValue);
 
-    let date1 = new Date(checkInValue)
-    let date2 = new Date(checkOutValue)
-
-    console.log(date1, date2);
+    let date1 = new Date(checkIn.value)
+    let date2 = new Date(checkOut.value)
+    
+    // console.log(checkIn.value, checkOut.value);
+    // console.log(date1, date2);
 
     let diffInMs = date2 - date1
     let diffInDays = Math.floor(diffInMs / (1000*60*60*24))
-    console.log(diffInDays);
+    // console.log(diffInDays);
+    return diffInDays
 }
 function validateRoomType(){
     if (roomType.value == ""){
@@ -102,12 +97,18 @@ function validateRoomType(){
 
     }
     else if(roomType.value == "duplex"){
+        let price = 150000
+        return price
 
     }
     else if(roomType.value == "royale"){
+        let price = 100000
+        return price
 
     }
     else if(roomType.value == "supreme"){
+        let price = 50000
+        return price
 
     }
 }
@@ -133,15 +134,21 @@ function validateForm(){
     // validateCheckIn()
     // validateCheckOut()
     // calcNumOfDays()
+    // alert (numOfDays)
     // validateRoomType()
     // validatenumOfPersons()
 
     if (validateName() == false || validateAddress() == false || validatePhone() == false ||  validateEmail() == false || validateCheckIn() == false || validateCheckOut() == false ||  validateRoomType() == false ||  validatenumOfPersons() == false){
 
-        alert("Please fill all fields")
+        alert("Please fill all fields correctly")
     }
 
     else{
-        alert('success')
+        let numOfDays = calcNumOfDays();
+        let price = validateRoomType()
+        let totalPrice = price * numOfDays
+        alert(`Congratulations, you have booked ${numOfDays} nights and your bill is ${totalPrice}`)
     }
+
+
 }
